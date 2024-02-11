@@ -1,0 +1,46 @@
+/* MarsRover Styles */
+
+.MarsRoverContainer {
+  max-width: 30%; 
+  position: relative;
+  left: 34%;
+}
+
+.MarsRover {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.MarsRover img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+
+/* Description Overlay Styles */
+
+.description-overlay {
+  position: absolute;
+  top: 350px;
+  left: 0;
+  width: 100%; 
+  height: 30%; 
+  
+  color: white;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: row; 
+}
+
+.description {
+  max-width: 90%; 
+  padding: 20px;
+  text-align: center; 
+  overflow: auto; 
+}

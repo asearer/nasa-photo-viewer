@@ -2,19 +2,18 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  /* Set a background image */
+  background-image: url('/public/spaceman2.jpg');
+  
+  /* Specify background properties */
+  background-size: cover; /* Make the background cover the entire viewport */
+  background-position: center center; /* Center the background image */
+  background-repeat: no-repeat;
+  
+  /* Set a background color in case the image is not available or loaded */
+  background-color: #282c34; 
+  
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +23,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+

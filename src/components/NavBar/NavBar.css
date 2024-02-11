@@ -1,0 +1,114 @@
+/* NavBar.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; 
+}
+
+.nav-container {
+  position: relative;
+  height: 100%;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 10px;
+  border-radius: 5px;
+  display: flex; 
+  flex-direction: column; 
+}
+
+.submenu li {
+  margin: 5px 0; 
+}
+
+.submenu li a {
+  color: white;
+}
+
+.shooting-star {
+  position: absolute;
+  top: 250%;
+  left: -1500px; 
+  width: 20px;
+  height: 2px;
+  background-color: white; 
+  animation: shootingStarAnimation 5s linear infinite; 
+}
+
+@keyframes shootingStarAnimation {
+  0% {
+    left: -1500px; 
+  }
+  100% {
+    left: calc(100vw + 500px); 
+  }
+}
+
+.nav-container .navbar ul li div {
+  cursor: pointer;
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the text is not revealed until the animation */
+  border-right: .15em solid orange; /* The typewriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0; /* Provides space between the text and cursor */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end), /* The typewriter effect */
+    blink-caret .75s step-end infinite; /* The blinking cursor effect */
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The blinking cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent; /* Transparent cursor */
+  }
+  50% {
+    border-color: orange; /* Blinking cursor color */
+  }
+}

@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+Application Overview:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The application is a web-based platform that provides users with access to various NASA-related content, including Astronomy Picture of the Day (APOD), Mars Rover images, and Earth Polychromatic Imaging Camera (EPIC) data. Users can search for images by date, view curated content, and explore the latest imagery from NASA missions.
 
-## Available Scripts
+Application Structure:
 
-In the project directory, you can run:
+The application is structured as a React-based single-page application (SPA). It utilizes components to modularize functionality and maintain a clear separation of concerns.
 
-### `npm start`
+Components:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    ShootingStarNavBar:
+        Responsible for navigation and routing within the application.
+        Provides links for accessing different sections of the application based on user authentication status.
+        Implements a submenu for selecting image sources by date.
+        Utilizes React Router for navigation between different routes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    NasaApodComponent:
+        Displays NASA's Astronomy Picture of the Day (APOD).
+        Fetches and renders the APOD image along with its title and description.
+        Supports a clickable overlay for displaying the image description.
 
-### `npm test`
+    MarsRoverGallery:
+        Displays a gallery of images captured by the Mars Curiosity Rover.
+        Fetches and renders the latest Mars rover images.
+        Allows users to select specific camera images for viewing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ApodSearch, EpicSearch, MarsSearch:
+        Components for searching image sources by date.
+        Fetch imagery data based on the selected date from APOD, EPIC, and Mars rover archives.
+        Display fetched images along with relevant details.
 
-### `npm run build`
+    LoginPage:
+        Handles user authentication by providing a login form.
+        Validates user credentials and allows access to authenticated features.
+        Uses a Demo account for demonstration purposes.
+        
+    DateSearchForm:
+        Provides a reusable component for selecting a date and fetching related imagery data.
+        Used by multiple components to search imagery archives by date.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Features:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Navigation: 
+    Users can navigate between different sections of the application using the navbar.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Authentication: 
+    The application supports user authentication, allowing access to authenticated features.
 
-### `npm run eject`
+    Image Search: 
+    Users can search for NASA imagery by date across different image sources.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    APOD Display: 
+    The application displays NASA's Astronomy Picture of the Day along with its details.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Mars Rover Gallery: 
+    Users can browse the latest images captured by the Mars Curiosity Rover and view them in a gallery format.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    EPIC Data: 
+    Users can explore Earth Polychromatic Imaging Camera (EPIC) data captured by NASA satellites.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+External APIs:
 
-## Learn More
+The application leverages the following external APIs provided by NASA:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    NASA APOD API: Fetches Astronomy Picture of the Day data.
+    NASA Mars Rover API: Retrieves images captured by the Mars Curiosity Rover.
+    NASA EPIC API: Retrieves Earth Polychromatic Imaging Camera data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Technologies Used:
 
-### Code Splitting
+    React: Front-end library for building user interfaces.
+    React Router: Library for declarative routing in React applications.
+    CSS: Styling language used for UI design and layout.
+    JavaScript: Programming language used for implementing application logic.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Future Enhancements:
 
-### Analyzing the Bundle Size
+    User Profiles: Implement user profiles to personalize the user experience.
+    Favorites: Allow users to save their favorite images for quick access.
+    Search Filters: Enhance search functionality with filters for better image discovery.
+    Responsive Design: Optimize the application for different screen sizes and devices.
+    Error Handling: Improve error handling to provide better feedback to users.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Deployment:
 
-### Making a Progressive Web App
+The application is deployed and accessible at https://asearer.github.io/nasa-photo-viewer/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This documentation provides an overview of the React application, its features, components, and potential future enhancements. 
+-----------------------------------------------------------------------------------------------------------------
+User Flow: Accessing NASA Imagery and Data
 
-### Advanced Configuration
+    Initial Landing Page:
+        Upon accessing the application, users are presented with the landing page.
+        If the user is not logged in, they are prompted to log in using their credentials.
+        Default credentials are provided for demonstration purposes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    Login Process:
+        Users navigate to the login page and input their credentials (username and password).
+        After submitting the login form, the application verifies the credentials.
 
-### Deployment
+    Authenticated Home Page:
+        Upon successful authentication, users are redirected to the authenticated home page.
+        The home page provides navigation options and access to various features of the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    Exploring Image Sources by Date:
+        Users can choose to explore NASA imagery from different sources based on dates.
+        They select a specific date or range of dates to retrieve imagery data.
+        The application fetches and displays imagery data from sources such as APOD, EPIC, or Mars rover archives.
 
-### `npm run build` fails to minify
+    Viewing Astronomy Picture of the Day (APOD):
+        Users can access the Astronomy Picture of the Day section to view the latest APOD image.
+        The application retrieves and displays the APOD image along with its title and description.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Browsing Mars Rover Images:
+        Users navigate to the Mars Curiosity Rover section to view the latest images captured by the rover.
+        They can browse through a gallery of rover images and select specific images taken by different cameras.
+
+    Interacting with EPIC Data:
+        Users access the EPIC section to explore Earth Polychromatic Imaging Camera data.
+        They can search for EPIC imagery based on specific dates and view the captured images.
+
+    Logout Process:
+        Users have the option to log out of their account at any time.
+        Upon logging out, the application clears the user's authentication status and redirects them to the login page.
+
+Summary:
+
+The user flow for accessing NASA imagery and data involves logging into the application, navigating through different sections to explore imagery sources by date, viewing APOD images, browsing Mars Rover images, and interacting with EPIC data. At each step, users are presented with relevant options and information to facilitate their exploration of NASA-related content.
