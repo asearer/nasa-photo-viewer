@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 
-// LoginPage component for user authentication
 const LoginPage = ({ onLogin }) => {
-  // State variables for username and password inputs
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
+    
 
     // Call the onLogin function passed from the parent component
-    // to handle the login action with provided username and password
+    // to handle the login action
     onLogin(username, password);
   };
 
@@ -25,7 +23,6 @@ const LoginPage = ({ onLogin }) => {
     <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        {/* Username input */}
         <div>
           <label htmlFor="username">Username:</label>
           <input
@@ -36,7 +33,6 @@ const LoginPage = ({ onLogin }) => {
             required
           />
         </div>
-        {/* Password input */}
         <div>
           <label htmlFor="password">Password:</label>
           <input
@@ -47,9 +43,7 @@ const LoginPage = ({ onLogin }) => {
             required
           />
         </div>
-        {/* Submit button */}
         <button type="submit">Login</button>
-        {/* Button to set default login credentials */}
         <button type="button" onClick={setDefaultLogin}>Default Login</button>
       </form>
     </div>
